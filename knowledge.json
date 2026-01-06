@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "Vacation Policy",
+    "content": "Employees are entitled to 20 days of paid vacation per year. Unused days expire.",
+    "inferred": {
+      "expiry_timing": {
+        "assumption": "end of calendar year",
+        "confidence": 0.35,
+        "source": "agent_inferred"
+      }
+    }
+  },
+  {
+    "id": "2",
+    "title": "Sick Leave",
+    "content": "Employees may take sick leave with manager approval.",
+    "inferred": {
+      "annual_limit": {
+        "days": 10,
+        "assumption": "Typical sick leave allowance in absence of explicit policy",
+        "confidence": 0.3,
+        "source": "agent_inferred"
+      }
+    }
+  },
+  {
+    "id": "3",
+    "title": "Parental Leave",
+    "content": "Maternity leave is available. Details missing."
+  }
+]
