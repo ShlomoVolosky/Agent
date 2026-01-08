@@ -10,7 +10,7 @@ def load_env_file(path=".env"):
             if not line or line.startswith("#"):
                 continue
             key, value = line.split("=", 1)
-            os.environ.setdefault(key, value)
+            os.environ[key] = value
 
 load_env_file()
 
