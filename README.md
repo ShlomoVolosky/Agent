@@ -35,10 +35,12 @@ python agent.py company_policies.json
 - If first argument ends with `.json` → uses it as KB file
 - Otherwise uses default `knowledge.json`
 - Remaining arguments = your question
+- When the agent detects knowledge gaps, it uses `update_kb` to repair the knowledge base
+- Updates are saved to a new file: `knowledge_fixed.json` (original KB remains unchanged)
 
 ### test_interactive.py - Real LLM Testing
 
-This script demonstrates the agent using real OpenAI GPT-4 calls instead of the stub implementation.
+This script replaces the stub LLM with real OpenAI GPT-4 API calls to demonstrate the agent with actual language model reasoning.
 
 **Manual approval mode (ask before each KB update):**
 ```bash
@@ -49,6 +51,14 @@ python test_interactive.py no
 ```bash
 python test_interactive.py yes
 ```
+
+**What it does:**
+- Replaces the stub with real OpenAI GPT-4 API calls
+- Runs 3 test questions
+- Shows KB updates before applying them
+- Requires `OPENAI_API_KEY` in `.env` file
+
+**Note:** The test questions are hardcoded and can be modified in line 127 of `test_interactive.py`
 
 ## Test Questions
 
